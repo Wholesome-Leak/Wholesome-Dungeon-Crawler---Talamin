@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{007E1DBC-1FBE-43AA-A97E-D4F3B442C466}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WholesomeDungeonCrawler</RootNamespace>
+    <AssemblyName>WholesomeDungeonCrawler</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>8.0</LangVersion>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>8.0</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MahApps.Metro, Version=1.6.5.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dependencies\MahApps.Metro.dll</HintPath>
+    </Reference>
+    <Reference Include="MahApps.Metro.IconPacks.Material, Version=2.3.0.4, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dependencies\MahApps.Metro.IconPacks.Material.dll</HintPath>
+    </Reference>
+    <Reference Include="MemoryRobot, Version=1.0.7916.19022, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dependencies\MemoryRobot.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dependencies\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="RDManaged">
+      <HintPath>Dependencies\RDManaged.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="robotManager, Version=1.0.0.20232, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dependencies\robotManager.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="wManager, Version=1.0.0.20240, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dependencies\wManager.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Data\Cache.cs" />
+    <Compile Include="Data\Target\CachedAura.cs" />
+    <Compile Include="Data\Target\CachedWoWLocalPlayer.cs" />
+    <Compile Include="Data\Target\CachedWoWPlayer.cs" />
+    <Compile Include="Data\Target\CachedWoWUnits.cs" />
+    <Compile Include="Data\Target\EntityCache.cs" />
+    <Compile Include="Data\Target\IAura.cs" />
+    <Compile Include="Data\ICache.cs" />
+    <Compile Include="Data\ICycleable.cs" />
+    <Compile Include="Data\Target\IEntityCache.cs" />
+    <Compile Include="Data\Target\IWoWLocalPlayer.cs" />
+    <Compile Include="Data\Target\IWoWPlayer.cs" />
+    <Compile Include="Data\Target\IWoWUnit.cs" />
+    <Compile Include="Dungeonlogic\ILogicRunner.cs" />
+    <Compile Include="Dungeonlogic\LogicRunner.cs" />
+    <Compile Include="Dungeonlogic\Profile.cs" />
+    <Compile Include="Dungeonlogic\Step.cs" />
+    <Compile Include="GUI\ProductSettingsControl.xaml.cs">
+      <DependentUpon>ProductSettingsControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ProfileStep.xaml.cs">
+      <DependentUpon>ProfileStep.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ProfileEditor.xaml.cs">
+      <DependentUpon>ProfileEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\IMoveHelper.cs" />
+    <Compile Include="Helpers\Lists.cs" />
+    <Compile Include="Helpers\MoveHelper.cs" />
+    <Compile Include="Profiles\Base\Execute.cs" />
+    <Compile Include="Profiles\Base\GoTo.cs" />
+    <Compile Include="Profiles\Base\InteractWith.cs" />
+    <Compile Include="Profiles\Base\MoveAlongPath.cs" />
+    <Compile Include="Profiles\Base\MoveToUnit.cs" />
+    <Compile Include="Profiles\Base\PickupObject.cs" />
+    <Compile Include="Settings\Settings.cs" />
+    <Compile Include="Bot\WholesomeDungeonCrawler.cs" />
+    <Compile Include="Helpers\Logger.cs" />
+    <Compile Include="Main.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="States\DungeonLogic.cs" />
+    <Compile Include="States\GroupInviteAccept.cs" />
+    <Compile Include="States\GroupInvite.cs" />
+    <Compile Include="States\GroupProposalAccept.cs" />
+    <Compile Include="States\GroupQueue.cs" />
+    <Compile Include="States\GroupQueueAccept.cs" />
+    <Compile Include="States\GroupRevive.cs" />
+    <Compile Include="States\IState.cs" />
+    <Compile Include="States\Loot.cs" />
+    <Compile Include="States\OpenSatchel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Data\Group\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Dependencies\robotManager.dll" />
+    <Content Include="Dependencies\wManager.dll" />
+    <Page Include="GUI\ProfileStep.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GUI\Theme.xaml">
+      <Generator>XamlIntelliSenseFileGenerator</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="GUI\ProductSettingsControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GUI\ProfileEditor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <Import Project="Wholesome-Toolbox\Wholesome_Toolbox.projitems" Label="Shared" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>
